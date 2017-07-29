@@ -1,12 +1,12 @@
 var gulp = require('gulp'),
     watch = require('gulp-watch'),
-    autoprefixer = require('gulp-autoprefixer'),
+    // autoprefixer = require('gulp-autoprefixer'),
     uglify = require('gulp-uglify'),
     less = require('gulp-less'),
     rigger = require('gulp-rigger'),
     rimraf = require('rimraf'),
     sourcemaps = require('gulp-sourcemaps'),
-    liveServer = require("live-server"),
+    // liveServer = require("live-server"),
     browserSync = require('browser-sync'),
     LessPluginAutoPrefix = require('less-plugin-autoprefix'),
     autoprefixLess = new LessPluginAutoPrefix({
@@ -46,22 +46,22 @@ var path = {
     clean: './build'
 };
 
-var config = {
-    port: 8888,
-    host: "127.0.0.1",
-    root: "build/",
-    open: true,
-    wait: 300,
-    mount: []
-};
+// var config = {
+//     port: 8888,
+//     host: "127.0.0.1",
+//     root: "build/",
+//     open: true,
+//     wait: 300,
+//     mount: []
+// };
 
 gulp.task('clean', function (cb) {
     rimraf(path.clean, cb);
 });
 
-gulp.task('webserver', function () {
-    liveServer.start(config);
-});
+// gulp.task('webserver', function () {
+//     liveServer.start(config);
+// });
 
 
 gulp.task('html:build', function () {
@@ -129,10 +129,6 @@ gulp.task('browserSync', function () {
         open: true,
         notify: false
     });
-});
-
-gulp.task('clean', function (cb) {
-    rimraf(path.clean, cb);
 });
 
 gulp.task('build', [
